@@ -1,18 +1,7 @@
-# 程序集市lite版本
-程序集市lite版，使用wordpress作为后台生成微信小程序。
-
-喜欢的朋友记得点下star，谢谢！
-![image](https://www.xcxgy.cn/wp-content/uploads/2018/12/1545299682-isetans.png)
-
-#第一个版本比较粗糙，之后会不断的优化。暂时不会做功能上的增加
-
-推荐：
-微慕小程序——wordpress生成小程序专业解决方案。 网站：www.minapper.com
-
 
 # 程序集市lite
 程序集市lite版本，使用wordpress作为后台生成微信小程序。
-![image]((https://doc.xcxpark.cn/uploads/projects/cxjslite/1572020e1faf389b.png "isetans.png")
+![image]((https://doc.xcxpark.cn/uploads/projects/cxjslite/1572020e1faf389b.png")
 ## 准备工作
 本程序是基于jianbo的开源程序二次开发，原项目地址：https://github.com/iamxjb/winxin-app-watch-life.net
 后端插件是jianbo开发的REST API TO MiniProgram，地址：https://wordpress.org/plugins/rest-api-to-miniprogram/
@@ -27,4 +16,4 @@
 
 ## 知识星球
 每个月会推出一款会员专属小程序源码！
-![微信图片_20181220180607.jpg](https://doc.xcxpark.cn/uploads/projects/cxjslite/15720282b61f4860.jpg "微信图片_20181220180607.jpg")
+![微信图片_20181220180607.jpg](https://doc.xcxpark.cn/uploads/projects/cxjslite/15720282b61f4860.jpg)
