@@ -24,5 +24,6 @@
 ## 知识星球
 
 每个月会推出一款会员专属小程序源码！
+目前已经上架第一款：程序集市lite优化版，可搜索“源码猫”查看演示。
 
 ![image](https://doc.xcxpark.cn/uploads/projects/cxjslite/15720282b61f4860.jpg)
