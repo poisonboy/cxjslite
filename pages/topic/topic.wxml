@@ -1,0 +1,48 @@
+<import src="../../templates/login-popup.wxml" />
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}"></template>
+<image class='navigator1' mode='aspectFill' src='{{skin}}' style='height:{{STATUSBAR_HEIGHT+44}}px; '></image>
+
+<view class='navigator' bindtap='toTopHandler' style='padding-top:{{STATUSBAR_HEIGHT}}px; '>
+  <!--左边按钮  -->
+
+   
+  <!--中间标题  -->
+  <view class='title'>
+    <text>专题分类</text>
+  </view>
+  <!--右边间隙  -->
+</view>
+
+
+<scroll-view style="height:100%;" scroll-y="true" lower-threshold="100rpx">
+  <view class="topic-common-list">
+    <block wx:key="id" wx:for="{{categoriesList}}">
+      <view class="list-item">
+      
+          <image src="{{item.category_thumbnail_image}}" mode='aspectFill' class="cover" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex"></image>
+            <image class='bgimg' src='../../images/index_mask.png'></image>
+        <view class="content-title" data-item="{{item.name}}" data-id="{{item.id}}" bindtap="redictIndex">
+          <view class="topic-name">
+            <text>{{item.name}}</text>
+          </view>
+         <view class='content-titlebg'></view>
+        </view>
+        <view class="content-brief" data-item="{{item.name}}" data-id="{{item.id}}">
+          <text>{{item.description}}</text>
+        </view>
+
+
+      </view>
+
+    </block>
+  </view>
+<navigator url='../about/about' class='footer' hover-class='hover-class'>
+    <text>程序集市</text>
+  </navigator>
+
+</scroll-view>
+<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+
+
+

@@ -1,0 +1,114 @@
+<!--导航栏  -->
+
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}"></template>
+<view class='navigator1' style='padding-top:{{STATUSBAR_HEIGHT}}px;background-image: url("{{skin}}"); opacity: {{opacity}};'></view>
+
+<view class='navigator' bindtap='toTopHandler' style='padding-top:{{STATUSBAR_HEIGHT}}px; '>
+  <!--左边按钮  -->
+  <view class='leftButton' hover-class='hover-class' bindtap='huanfu'>
+    <form bindsubmit="pushFormSubmit" report-submit='true'>
+      <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+      <image src='../../images/left.png'></image>
+    </form>
+  </view>
+  <!--中间标题  -->
+  <view class='title'>
+    <text>程序集市</text>
+  </view>
+  <!--右边间隙  -->
+</view>
+
+
+
+<scroll-view scroll-y bindscroll="scrollHandler" scroll-with-animation class="container" scroll-top="{{SCROLL_TOP}}" >
+  <!--顶部图片  -->
+  <image src='{{skin}}' class='header_image'></image>
+
+  <!--顶部文字  -->
+  <view class='header_text'>
+
+    <text>每天推荐一个精品项目源码</text>
+  </view>
+  <view class='card'>
+    <swiper class="index-swiper" interval="5000" autoplay="true">
+      <block wx:key="id" wx:for="{{postsShowSwiperList}}">
+        <swiper-item class="swiper-item" id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:420rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <image mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%" />
+
+            <view class="swiper-desc">
+              <text>{{item.post_title}}</text>
+            </view>
+          </form>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--第一张卡片内容 
+  <view class='first_card' hover-class='hover-class'>
+
+    <button form-type='submit'>
+      
+      <view class='first_title_box'>
+        <text>{{first.title}}</text>
+      </view>
+
+      <view class='first_content_box'>
+        <text>{{first.content}}</text>
+      </view>
+ 
+      <view class='first_author_box'>
+        <text>—— {{first.text_authors}}</text>
+      </view>
+    </button>
+
+  </view> -->
+
+    <!--其他内容  -->
+    <view class='other_card' hover-class='hover-class' wx:key="id" wx:for="{{postsList}}">
+
+      <view class='other_cardbg' index="{{index}}" id="{{item.id}}" bindtap="redictDetail" style="background-image: url('{{item.post_thumbnail_image}}')">
+        <form bindsubmit="pushFormSubmit" report-submit='true'>
+          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:420rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+          <!--标题  -->
+          <view class='other_box'>
+            <view class='other_title_box'>
+              <text>{{item.title.rendered}}</text>
+            </view>
+            <!--内容  
+        <view class='other_content_box'>
+          <text>{{item.excerpt}}</text>
+        </view>-->
+            <!--作者  -->
+            <view class='other_author_box'>
+              <text>{{item.category_name}}</text>
+              <image src='https://gw.alicdn.com/tfs/TB1G2cgeBTH8KJjy0FiXXcRsXXa-146-34.png'></image>
+            </view>
+          </view>
+        </form>
+      </view>
+    </view>
+
+    <view hidden="{{isLastPage}}" class='more'>
+      <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
+    </view>
+
+  </view>
+
+  <!--底部内容  -->
+  <navigator url='../about/about' class='footer' hover-class='hover-class'>
+    <text>程序集市</text>
+  </navigator>
+</scroll-view>
+<view class="fresh" bindtap="toTopHandler">
+  <image src="../../images/top.png"></image>
+</view>
+<view class="posts" bindtap="fresh">
+  <image src="../../images/fresh.png"></image>
+</view>
+<view class="kefu">
+
+  <image src="../../images/kefu.png"></image>
+  <button class="contact" open-type='contact'></button>
+</view>

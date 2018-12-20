@@ -1,0 +1,19 @@
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}"></template>
+<view class='topbg'>
+  <text class='toptex'>更换皮肤</text>
+  <view class="wic_wave">
+    <image mode="aspectFill" class="user-backimage" src="{{skin}}"></image>
+  </view>
+</view>
+<view class="skin-list">
+  <view bindtap="chooseSkin" class="skin-item {{nowSkin==skinItem.imgUrl?'skin-item-active':''}}" data-url="{{skinItem.imgUrl}}" wx:for="{{skinList}}" wx:for-index="skinIndex" wx:for-item="skinItem" wx:key="skin">
+    <image class="skin-img" mode="aspectFill" src="{{skinItem.imgUrl}}"></image>
+    <view class="skin-title">{{skinItem.title}}</view>
+  </view>
+</view>
+ <navigator class='header1'  open-type="switchTab" url="../index/index" type="switchTab" hover-class='hover-class' >
+    
+      <image src='../../images/back1.png' class="icon icon-back"></image>
+   
+  </navigator >

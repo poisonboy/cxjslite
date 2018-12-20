@@ -1,0 +1,57 @@
+<template name="tempCommonList">
+
+  <view class="common-list">
+    <block wx:key="id" wx:for="{{postsList}}">
+    
+     
+        <view wx:if="{{index%5==0}}">
+          <view class="list-item3 has-img " index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+          <view class="content-title3 ">
+            <text>{{item.title.rendered}}</text>
+          </view>
+          <view class=" content-date3" >
+
+          <block wx:if="{{item.category_name !=null}}">
+              <text>#{{item.category_name}}#</text>
+            </block>
+
+          
+              <text>发布于{{item.date}}</text>
+
+           
+
+          </view>
+          <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover3"></image>
+        </view>
+    
+      </view>
+      <view wx:else>
+        <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+        <view class="content-title" >
+          <text>{{item.title.rendered}}</text>
+        </view>
+        <view class="content-date">
+           <!--image src="../../images/calendar.png"></image>
+              <text>{{item.date}}</text-->
+          <image src="../../images/comments.png"></image>
+            <text class="">{{item.total_comments}}</text>
+            <image src="../../images/pageviews.png"></image>
+            <text class="">{{item.pageviews}}</text>
+            <image src="../../images/home-like.png"></image>
+            <text class="">{{item.like_count}}</text>        
+        </view>
+        <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover"></image>
+      </view>  </view> 
+    </block>
+  </view>  
+   <view class="loadingmore" style="display:{{floatDisplay}}">
+        <!-- 
+                <view hidden="{{isLastPage}}">
+                    <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
+                </view>-->
+        <view class="no-more" hidden="{{!isLastPage}}">---无更多文章---</view>
+      </view>
+      <view class="copyright" style="display:{{floatDisplay}}">
+        <template is="tempCopyright" />
+      </view>
+</template>

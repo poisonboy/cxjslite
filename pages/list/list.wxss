@@ -1,0 +1,174 @@
+/*
+ * 
+ * WordPres版微信小程序
+ * author: jianbo
+ * organization: 守望轩  www.watch-life.net
+ * github:    https://github.com/iamxjb/winxin-app-watch-life.net
+ * 有问题加微信：poisonkid，不要叨扰jianbo
+ * 开源协议：MIT
+ * Copyright (c) 2017 https://www.watch-life.net All rights reserved.
+ */
+
+.list-header {
+  padding: 50rpx 0;
+  text-align: left;
+  font-weight: normal;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  color: #21759b;
+  border-bottom: 2rpx solid #ededed;
+  margin-bottom: 48rpx;
+}
+
+
+.navigator {
+  background-color: rgba(3, 169, 244, 0);
+  height: 88rpx;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftButton {
+ opacity:1;
+
+margin:14rpx;
+background-color:rgba(0, 0, 0, 0.20);
+border-radius:50rpx;
+box-shadow:0rpx 0rpx 1rpx 0rpx #fff;
+width: 80rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftButton > image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx;
+}
+
+.title {
+  height: 44px;
+  margin-right: 50px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title > text {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+button {
+  padding: 0;
+  font-size: auto;
+  line-height: 26px;
+  text-align: left;
+  overflow: none;
+  border-radius: 0;
+  box-sizing: none;
+  background: transparent;
+}
+
+button::after {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.button-hover {
+  background: transparent;
+}
+
+.hover-class {
+  opacity: 0.8;
+}
+
+
+/*topic list*/
+
+.topic-common-list {
+
+}
+.container {
+margin: 0 20rpx;
+  background-color: #fff;
+  font-family: Microsoft YaHei, Helvetica, Arial, sans-serif;
+}
+.topic-list-item {
+  position: relative;
+  /* border-bottom: 1px solid #eee;   */
+  overflow: hidden;
+  clear: both;
+  /* border: 1px solid #ccc; *//* border-radius: 6px; */
+  margin-bottom: 30rpx;
+  background: #fff;
+}
+
+.topic-list-item  image.cover {
+  width: 100%;
+  height: 375rpx;
+  filter: blur(4px);
+}
+
+.topic-content-title {
+  padding: 16rpx 0rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  /* border-bottom: 1px solid #fff; */
+  z-index: 2;
+  left: 60rpx;
+  top: 120rpx;
+}
+
+.topic-content-title text {
+  font-size: 48rpx;
+  line-height: 48rpx;
+  color: #fff;
+}
+
+.topic-content-title-line{
+  width: 48px;
+  padding: 16rpx 0rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  border-bottom: 1px solid #fff; 
+  z-index: 2;
+  left: 64rpx;
+  top: 180rpx;
+}
+
+
+.topic-content-brief {
+  /* padding: 0rpx 30rpx 30rpx; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 2;
+  left: 60rpx;
+  top: 240rpx;
+}
+
+.topic-content-brief text {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #fff;
+}
+
+.searchKey {
+  color: #121b23;
+}

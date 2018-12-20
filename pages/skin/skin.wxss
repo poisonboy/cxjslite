@@ -1,0 +1,116 @@
+.skin-list {
+    overflow: hidden;
+    margin-top: 150rpx;
+ 
+}
+
+.skin-item,.skin-img {
+    width: 710rpx;
+    height:150rpx;
+    margin: 0 20rpx;
+}
+
+.skin-item {
+  background-color: #eeeeee;
+    box-sizing: border-box;
+    position: relative;
+    margin: 30rpx auto;
+    border-radius: 12rpx;
+    box-shadow: 0 10rpx 30rpx rgba(0,0,0,.2);
+    overflow: hidden;
+}
+
+.skin-item-active {
+    border: 6rpx solid #47a86c;
+}
+
+.skin-item-active::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -78rpx;
+    right: -88rpx;
+    z-index: 4;
+    width: 198rpx;
+    height: 166rpx;
+    transform: rotate(45deg);
+    background-color: #47a86c;
+}
+
+.skin-item-active::after {
+    content: '使用中';
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: -4px;
+    z-index: 4;
+    text-align: center;
+    transform: rotate(45deg);
+    color: #fff;
+}
+
+.skin-title {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80rpx;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    padding: 0 40rpx;
+    /*background-color: rgba(0,0,0,.6);*/
+    border-radius: 0 0 20rpx 20rpx;
+    color: #fff;
+}
+.topbg {
+  top: 0;
+position: fixed;
+
+height: 150rpx;
+width: 750rpx;
+z-index: 9998;
+}
+.toptex {
+position: absolute;
+top: 60rpx;
+width:150rpx;
+
+left: 300rpx;
+ text-align: center;
+ font-weight:bold;
+z-index: 9999;
+font-size: 36rpx;
+color: #fff;
+}
+.top-bar {
+  height:140rpx;
+  
+  width: 100%;
+ 
+  z-index: 1;
+  margin-bottom: 20rpx;
+}
+
+
+.wic_wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    
+    width: 100%;
+    z-index: 9997;
+}
+.wic_wave image {
+   
+    height: 150rpx;
+    width: 100%;
+
+}
+.user-backimage{
+ 
+  width:750rpx;
+  height: 150rpx;
+ 
+}

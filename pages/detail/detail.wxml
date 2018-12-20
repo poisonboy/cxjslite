@@ -1,0 +1,223 @@
+
+<include src="../../libs/weToast/weToast.wxml" />
+<import src="../../wxParse/wxParse.wxml" />
+
+<import src="../../templates/loading.wxml" />
+<import src="../../templates/modal-view/modal-view.wxml" />
+<import src="../../templates/login-popup.wxml" />
+<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+<import src="/pages/template/template.wxml" />
+<template wx:if="{{onlineTier}}" is="{{onlineData.line_type == 1 ? 'onLineTierText' : 'onLineTierPic'}}" data="{{onlineData}}"></template>
+<view wx:if="{{showModel}}" >
+    <image class="swiper-image" src="../../images/getRight.png"></image>
+    <view class='adbg'></view>
+    <button open-type="getUserInfo" class="button-img" bindgetuserinfo="agreeGetUser" lang="zh_CN">确定授权</button>
+  </view>
+<!--导航栏  -->
+<form report-submit bindsubmit='toTopHandler'>
+  <button form-type='submit'>
+    <view class='navigator' style='padding-top:{{STATUSBAR_HEIGHT}}px;background-color: rgba(3, 169, 244, {{opacity}});'>
+      <!--左边按钮  -->
+      <view class='leftButton' hover-class='hover-class' bindtap='goHomeHandler' wx:if="{{IS_SHARE_PAGE}}">
+        <image src='../../images/back1.png'></image>
+      </view>
+      <view class='leftButton' hover-class='hover-class' bindtap='goBackHandler' wx:else>
+        <image src='../../images/back1.png'></image>
+      </view>
+      <!--中间标题  -->
+      <view class='title'>
+        <text>{{data.title}}</text>
+      </view>
+      <!--右边间隙  -->
+    </view>
+  </button>
+</form>
+<view class="detailtop">
+  <view class="topimg">
+    <image src="{{detail.post_medium_image_300}}"></image>
+  </view>
+  <view class='topcover'> </view>
+  <view class="a">
+    <view class="b">
+      <view class="topicname">
+        <text class="line" wx:if="{{detail.category_name!=null}}">{{detail.category_name}}</text>
+      </view>
+      <view class="toptitle">{{detail.title.rendered}}</view>
+    </view>
+  </view>
+
+
+</view>
+
+
+
+
+
+<view class="webfont container1">
+  <view class="content-article-detail" style="display:{{display}}">
+
+    <view class="entry-summary">
+
+
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+    </view>
+
+
+  </view>
+
+
+
+
+  <view class="likePost">
+
+
+
+    <view class="likeTitle">
+
+      <view class="cms-tit-left"></view>
+      <text>{{likeCount}}人已赞</text>
+    </view>
+
+    <view class="likeText">
+      <block wx:key="id" wx:for="{{likeList}}">
+        <image src="{{item}}" class="gravatarLikeImg"></image>
+      </block>
+    </view>
+
+
+
+  </view>
+
+
+
+
+
+
+
+
+
+  <!--  上一篇，下一篇  -->
+
+
+
+
+  <!--
+
+   <view class="relatedPost" style="display:{{display}}">
+  <view class="relatedTitle">
+ 猜你喜欢
+  </view>
+  <view class="entry-gap-like"></view>
+  <view class="relatedText" wx:key="id" wx:for="{{postList}}">
+ 
+<view class='prev-post'>
+  <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator">
+  <view class="prevposts"  style="background-image: url('{{item.post_thumbnail_image}}');">
+  <view class="bg-shadow"></view>
+  
+  
+  <text class="textb">{{item.title.rendered}}</text>
+   </view></navigator>
+ 
+
+
+  
+
+</view>
+ 
+ </view> </view> -->
+  <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+
+
+
+
+  <view style="display:{{display}}">
+
+    <view style='display:{{isLoading?"block":"none"}}'>
+      <template is="tempLoading" />
+    </view>
+    <view style="display:{{isLastPage?'block':'none'}}">
+      <view class="no-more"></view>
+    </view>
+  </view>
+  <view class="next-prev-posts">
+
+    <view class="prev-post" wx:if="{{display}}">
+      <navigator url="../detail/detail?id={{detail.previous_post_id}}" open-type="redirect" hover-class="relatedNavigator">
+        <view class="prevposts" style="background: url('{{previousimage}}')center center;" wx:if="{{detail.previous_post_id}}">
+
+          <!--<view class="bg-shadow"></view>-->
+          <text class='texta'>LAST</text>
+          <text class='textb'>{{detail.previous_post_title}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="next-post">
+      <navigator url="../detail/detail?id={{detail.next_post_id}}" open-type="redirect" hover-class="relatedNavigator">
+        <view class="nextposts" style="background: url('{{nextimage}}') center center;" wx:if="{{detail.next_post_id}}">
+          <!--<view class="bg-shadow"></view>-->
+
+          <text class='textb'>{{detail.next_post_title}}</text>
+          <text class='texta'>NEXT</text>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+
+
+
+<modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+
+<template is="modalView" data="{{...__modalView__}}" />
+<view class="canvas-box">
+  <canvas style="width: 600px;height: 970px;" canvas-id="mycanvas" />
+</view>
+
+<view class="iconList">
+  <view class="iconLine">
+    <view>
+
+      <view>
+        <image src="../../images/forwarding.png" class="img-menu"></image>
+      </view>
+      <view>
+        <text>转发</text>
+      </view>
+      <button class="share-button share-button touch-active" open-type="share">
+      </button>
+    </view>
+    <view>
+      <view>
+        <image src="../../images/{{likeImag}}" catchtap="clickLike" id="likebottom" class="img-menu"></image>
+      </view>
+      <view>
+        <text>点赞</text>
+      </view>
+    </view>
+
+
+    <view>
+      <view>
+        <image src="../../images/poster.png" catchtap="downimageTolocal" class="img-menu"></image>
+      </view>
+      <view>
+        <text>海报</text>
+      </view>
+    </view>
+
+
+
+
+
+
+  </view>
+</view>
+
+
