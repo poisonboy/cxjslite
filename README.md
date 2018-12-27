@@ -3,7 +3,7 @@
 程序集市lite版本，使用wordpress作为后台生成微信小程序。
 
 ![image](https://doc.xcxpark.cn/uploads/projects/cxjslite/1572020e1faf389b.png)
-
+# 如果喜欢记得star，感谢！
 ## 准备工作
 本程序是基于jianbo的开源程序二次开发，原项目地址：https://github.com/iamxjb/winxin-app-watch-life.net
 
