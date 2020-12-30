@@ -1,5 +1,5 @@
 
-# 程序集市lite
+# Wordpress小程序——程序集市lite
 程序集市lite版本，使用wordpress作为后台生成微信小程序。
 
 ![image](https://doc.xcxpark.cn/uploads/projects/cxjslite/1572020e1faf389b.png)
@@ -21,9 +21,3 @@
 [微慕小程序](https://www.minapper.com/ "微慕小程序")——wordpress生成小程序专业解决方案！
 
 
-## 知识星球
-
-每个月会推出一款会员专属小程序源码！
-目前已经上架第一款：程序集市lite优化版，可搜索“源码猫”查看演示。
-
-![image](https://doc.xcxpark.cn/uploads/projects/cxjslite/15720282b61f4860.jpg)
